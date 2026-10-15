@@ -1,0 +1,13 @@
+[project]
+name = "payment-reconciliation"
+version = "1.0.0"
+description = "Idempotent payment reconciliation API with exact decimal comparisons"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"

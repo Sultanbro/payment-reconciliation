@@ -1,0 +1,18 @@
+services:
+  api:
+    build: .
+    environment:
+      API_KEY: ${API_KEY:?Run python3 scripts/setup.py first}
+      DATABASE_PATH: /app/data/reports.db
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - data:/app/data
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+volumes:
+  data:
